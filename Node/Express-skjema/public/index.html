@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="fornavn">Fornavn</label>
+    <input type="text" id="fornavn">
+    <label for="etternavn">Etternavn</label>
+    <input type="text" id="etternavn">
+    <label for="email">Epost</label>
+    <input type="email" id="epost">
+
+    <button id="send">Send</button>
+
+    <form action="http://localhost:3000/submitForm" method="POST">
+        Skriv en tekst: <input type="text" name="tekst">
+
+        <input type="submit" value="Send inn">
+    </form>
+
+    <script>
+        const inpFornavn = document.getElementById("fornavn");
+        const inpEtternavn = document.getElementById("etternavn");
+        const inpEpost = document.getElementById("epost");
+        const btnSend = document.getElementById("send");
+
+        btnSend.addEventListener("click", () => {
+            window.location.href = "http://localhost:3000/skjema?fornavn=" + inpFornavn.value + "&etternavn=" + inpEtternavn.value + "&epost=" + inpEpost.value;
+        })
+
+    </script>
+</body>
+</html>

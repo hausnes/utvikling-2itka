@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const query = new URLSearchParams(window.location.search);
+
+        let fornavn = query.get("fornavn");
+        let etternavn = query.get("etternavn");
+        let epost = query.get("epost");
+
+        document.body.innerHTML = "Hei " + fornavn + " " + etternavn + "! Din epost er " + epost + " .";
+    </script>
+</body>
+</html>
