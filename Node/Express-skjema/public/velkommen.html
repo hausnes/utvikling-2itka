@@ -7,12 +7,15 @@
 </head>
 <body>
     <script>
+        // Her oppretter vi en URLSearchParams-objekt som vi kan bruke til å hente ut querystringen fra URLen.
         const query = new URLSearchParams(window.location.search);
 
+        // Her henter vi ut verdiene fra querystringen.
         let fornavn = query.get("fornavn");
         let etternavn = query.get("etternavn");
         let epost = query.get("epost");
 
+        // Her skriver vi ut en melding til brukeren. Merk at vi konkatinerer sammen strenger og variabler og setter body sin innerHTML til dette. 
         document.body.innerHTML = "Hei " + fornavn + " " + etternavn + "! Din epost er " + epost + " .";
     </script>
 </body>

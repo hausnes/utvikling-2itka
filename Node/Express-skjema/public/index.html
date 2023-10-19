@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Denne type skjema trenger litt JS for å fungere, se linje 26-> -->
     <label for="fornavn">Fornavn</label>
     <input type="text" id="fornavn">
     <label for="etternavn">Etternavn</label>
@@ -15,6 +16,7 @@
 
     <button id="send">Send</button>
 
+    <!-- Denne type skjema trenger ingen JS i klienten, bare på sørveren bak ruten som ligger i action -->
     <form action="http://localhost:3000/submitForm" method="POST">
         Skriv en tekst: <input type="text" name="tekst">
 
@@ -22,11 +24,13 @@
     </form>
 
     <script>
+        // Henter HTML-elementene vi trenger
         const inpFornavn = document.getElementById("fornavn");
         const inpEtternavn = document.getElementById("etternavn");
         const inpEpost = document.getElementById("epost");
         const btnSend = document.getElementById("send");
 
+        // Legger til en eventlistener på knappen som sender brukeren til en ny side med querystringen i URLen
         btnSend.addEventListener("click", () => {
             window.location.href = "http://localhost:3000/skjema?fornavn=" + inpFornavn.value + "&etternavn=" + inpEtternavn.value + "&epost=" + inpEpost.value;
         })
