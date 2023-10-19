@@ -26,7 +26,7 @@ app.get("/skjema", (request, response) => {
     console.log("Fornavn: " + query.fornavn);
     console.log("Etternavn: " + query.etternavn);
     console.log("Epost: " + query.epost);
-
+    // Her sender vi tilbake skjema.html. Dersom vi ikke bruker path.join, må vi skrive hele adressen til filen, altså staticMappe + "/skjema.html".
     response.sendFile(staticMappe + "/velkommen.html");
 });
 
