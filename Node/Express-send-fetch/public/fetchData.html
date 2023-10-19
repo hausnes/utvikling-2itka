@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // En funksjon for å hente data fra serveren. Denne må være async fordi vi bruker await inne i den.
+        async function getData() {
+            const data = await fetch("http://localhost:3000/getData");
+            const json = await data.json();
+            console.log(json);
+        }
+
+
+        getData();
+    </script>
+</body>
+</html>
