@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        async function getUsers() {
+            let response = await fetch('/users?results=100');
+            let users = await response.json();
+            console.log(users[0])
+            
+            for (let user of users) {
+                document.body.innerHTML += `<li>${user.name.first} ${user.name.last}</li>`
+            }
+        }
+
+        getUsers()
+    </script>
+</body>
+</html>
