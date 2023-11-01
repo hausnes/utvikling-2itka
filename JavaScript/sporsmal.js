@@ -21,7 +21,8 @@ class Sporsmal {
         container.appendChild(sporsmal);
         target.appendChild(container);
     }
- }
+}
+
 const spm1 = new Sporsmal('Jeg er enig i gratis SFO', [2, 2, 0, 0], [0, 0, 0, 0]);
 const spm2 = new Sporsmal('Jeg er enig i gratis Barnehage', [1, 2, 3, 5], [2, 3, 1, 4]);
 
@@ -30,5 +31,3 @@ for (let spm of spmArray) {
     spm.appendMyself(document.getElementById('sporsmalsContainer'));
 }
 spm1.appendMyself(document.getElementById('sporsmalsContainer'))
-
-
